@@ -7,7 +7,25 @@ Window {
     width: 320
     height: 480
     title: qsTr("Контакты")
-    Button{
-        text: "Нажми"
+
+    ListModel{                      //контейнер для модулей ListElement для индивидуальных значений эл-ов
+        id: contactsModel
+        ListElement{                //один эл-т списка
+            name:"Анастасия"
+        }
+        ListElement{
+            name:"Елизавета"
+        }
+        ListElement{
+            name:"Владислав"
+        }
+    }
+
+    ListView{                       //прокрученный список эл-ов
+        anchors.fill: parent
+        model: contactsModel        //подключаем контейнер в котором находятся различные эл-ты
+        delegate: Contact_element{  //представителем в списке будет Contact_element
+            name_contact: name
+        }
     }
 }

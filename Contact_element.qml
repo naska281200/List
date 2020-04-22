@@ -4,7 +4,7 @@ import QtQuick.Controls 2.13
 
 Rectangle {     //прямоугольник, в котором данные о контакте
     id: me
-    property alias name: name.text      //свойства картинки и имени контакта
+    property alias name_contact: name_contact.text      //свойства картинки и имени контакта
     property alias icon: icon.source
     width:parent.width
     height:60
@@ -23,7 +23,7 @@ Rectangle {     //прямоугольник, в котором данные о 
             Layout.margins: 5       //отступ со всех сторон
         }
         Label{
-            id:name
+            id:name_contact
             Layout.fillWidth: true  //высоту не указываем, она подстроиться под шрифт текста
             font.bold: true
             font.family: "Tahoma"
