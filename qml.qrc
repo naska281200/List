@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>icons/2789550284.jpg</file>
+        <file>Contact_element.qml</file>
+        <file>ContactList.qml</file>
+        <file>MainToolBar.qml</file>
     </qresource>
 </RCC>
