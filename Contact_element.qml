@@ -1,19 +1,20 @@
 import QtQuick 2.13
 import QtQuick.Layouts 1.13
 import QtQuick.Controls 2.13
+import QtGraphicalEffects 1.0
 
 Rectangle {     //прямоугольник, в котором данные о контакте
     id: me
 
     property alias name_contact: name_contact.text      //свойства картинки и имени контакта
-    property alias icon: icon.source
+    property alias icons: icons.one_icon
     property bool selected: false                       //свойство selected-выбранный, изначально ничего не выбрали=false
 
     width:parent.width
     height:60
-
     signal leftClick()             //создали свои сигналы для левой кнопки мыши и для правой
     signal rightClick()
+    signal newContactClick()
 
     color: {
         if (selected)              //если нажата кнопка на контакте
@@ -29,13 +30,13 @@ Rectangle {     //прямоугольник, в котором данные о 
         spacing: 10
         anchors.leftMargin: 5     //отступы от края прямоугольника
         anchors.rightMargin: 5
-        Image{
-            id:icon
-            source: "icons/2789550284.jpg"
-            Layout.fillHeight: true
-            Layout.preferredWidth: height
-            Layout.margins: 5       //отступ со всех сторон
+
+        Icons{
+            id:icons
+            Layout.preferredWidth: 45
+            Layout.preferredHeight: 45
         }
+
         Label{
             id:name_contact
             Layout.fillWidth: true  //высоту не указываем, она подстроиться под шрифт текста
@@ -51,8 +52,10 @@ Rectangle {     //прямоугольник, в котором данные о 
         acceptedButtons: Qt.LeftButton | Qt.RightButton     //свойство содержит кнопки мыши, на которые реагирует MouseArea
         hoverEnabled: true                                  //свойство наведения мыши, курсора (включили)
         onClicked: {                                        //свойство, которое срабатывает при нажатии кнопки мыши
-            if (mouse.button === Qt.LeftButton)             //нажата левая кнопка мыши, то срабатывает сигнал leftClick()
+            if (mouse.button === Qt.LeftButton){             //нажата левая кнопка мыши, то срабатывает сигнал leftClick()
                 leftClick();
+                newContactClick();
+            }
             if (mouse.button === Qt.RightButton)            //нажата правая кнопка мыши, то срабатывает сигнал rightClick()
                 rightClick();
         }
