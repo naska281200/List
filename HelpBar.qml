@@ -45,9 +45,9 @@ RowLayout{
             anchors.fill:parent
             source: "icons/поиск.jpg"
         }
-        onClicked: {
-            findClick();
-        }
+//        onClicked: {
+//            findClick();
+//        }
     }
     Button{
         Image{
