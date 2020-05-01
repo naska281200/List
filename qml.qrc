@@ -6,5 +6,16 @@
         <file>Contact_element.qml</file>
         <file>ContactList.qml</file>
         <file>MainToolBar.qml</file>
+        <file>icons/Анастасия.jpg</file>
+        <file>icons/Анна.jpg</file>
+        <file>icons/Дамир.jpg</file>
+        <file>icons/Надежда.jpg</file>
+        <file>icons/Елизавета.jpg</file>
+        <file>Icons.qml</file>
+        <file>icons/Контакт.jpg</file>
+        <file>icons/настройки.jpg</file>
+        <file>icons/поиск.jpg</file>
+        <file>icons/стрелка.jpg</file>
+        <file>HelpBar.qml</file>
     </qresource>
 </RCC>

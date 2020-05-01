@@ -2,13 +2,17 @@ import QtQuick 2.13
 import QtQuick.Window 2.13
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.13
+import QtQuick.Dialogs 1.2
 
 RowLayout {                 //эл-ты будут располагаться в строке
     signal newItem(string new_name)
+    property string textFieldfind: textField.text
+
     TextField{
         id: textField
         Layout.fillWidth: parent
-        selectByMouse: true
+        selectByMouse: true     //свой-во для выделения текста мышью
+        focus:true              //свой-во, чтобы вводить текст без нажатия на строку
     }
 
     function add()
@@ -19,6 +23,7 @@ RowLayout {                 //эл-ты будут располагаться в
 
     Button{
         text: "Добавить"
+        highlighted: true       //подсвечивание кнопки
         onClicked: {
             add();
         }

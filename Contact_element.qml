@@ -7,6 +7,7 @@ Rectangle {     //прямоугольник, в котором данные о 
     id: me
 
     property alias name_contact: name_contact.text      //свойства картинки и имени контакта
+    property alias name_contact2: name_contact2.text      //свойства картинки и имени контакта
     property alias icons: icons.one_icon
     property bool selected: false                       //свойство selected-выбранный, изначально ничего не выбрали=false
 
@@ -36,13 +37,24 @@ Rectangle {     //прямоугольник, в котором данные о 
             Layout.preferredWidth: 45
             Layout.preferredHeight: 45
         }
-
-        Label{
-            id:name_contact
-            Layout.fillWidth: true  //высоту не указываем, она подстроиться под шрифт текста
-            font.bold: true
-            font.family: "Tahoma"
-            font.pointSize: 13
+        ColumnLayout{
+            Layout.fillWidth: true
+            Label{
+                id:name_contact
+                Layout.fillWidth: true          //высоту не указываем, она подстроиться под шрифт текста
+                font.bold: true
+                font.family: "Tahoma"
+                font.pointSize: 13
+                elide: Label.ElideRight         //многоточие в конце
+            }
+            Label{
+                id:name_contact2
+                Layout.fillWidth: true          //высоту не указываем, она подстроиться под шрифт текста
+                font.family: "Tahoma"
+                font.pointSize: 10
+                text: "Hey there! I am using WhatsApp."
+                elide: Label.ElideRight         //многоточие в конце
+            }
         }
 
     }
